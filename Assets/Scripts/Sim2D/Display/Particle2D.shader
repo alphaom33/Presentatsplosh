@@ -47,7 +47,7 @@ Shader "Instanced/Particle2D" {
 				v2f o;
 				o.uv = v.texcoord;
 				o.pos = UnityObjectToClipPos(objectVertPos);
-				o.colour = ColourMap.SampleLevel(linear_clamp_sampler, float2(colT, 0.5), 0);
+				o.colour = ColourMap.SampleLevel(linear_clamp_sampler, float2(o.pos.x + 1.0, -o.pos.y + 1.0) / 2, 0);
 
 				return o;
 			}

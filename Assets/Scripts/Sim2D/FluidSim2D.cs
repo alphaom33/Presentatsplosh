@@ -72,7 +72,7 @@ namespace Seb.Fluid2D.Simulation
 			Init();
 		}
 
-		void Init()
+		public void Init()
 		{
 			float deltaTime = 1 / 60f;
 			Time.fixedDeltaTime = deltaTime;
@@ -233,7 +233,7 @@ namespace Seb.Fluid2D.Simulation
 		}
 
 
-		void OnDestroy()
+		public void OnDestroy()
 		{
 			ComputeHelper.Release(positionBuffer, predictedPositionBuffer, velocityBuffer, densityBuffer, sortTarget_Position, sortTarget_Velocity, sortTarget_PredicitedPosition);
 			spatialHash.Release();
@@ -245,6 +245,7 @@ namespace Seb.Fluid2D.Simulation
 			Gizmos.color = new Color(0, 1, 0, 0.4f);
 			Gizmos.DrawWireCube(Vector2.zero, boundsSize);
 			Gizmos.DrawWireCube(obstacleCentre, obstacleSize);
+			boundsSize = new Vector2(Camera.main.aspect, 1) * 2 * Camera.main.orthographicSize;
 
 			if (Application.isPlaying)
 			{

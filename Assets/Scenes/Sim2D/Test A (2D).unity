@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 271053319}
   - component: {fileID: 271053320}
   - component: {fileID: 271053323}
+  - component: {fileID: 271053324}
   m_Layer: 0
   m_Name: Simulation
   m_TagString: Untagged
@@ -174,11 +175,11 @@ MonoBehaviour:
   gravity: -12
   collisionDamping: 0.95
   smoothingRadius: 0.35
-  targetDensity: 55
-  pressureMultiplier: 500
+  targetDensity: 200
+  pressureMultiplier: 1000
   nearPressureMultiplier: 5
   viscosityStrength: 0.03
-  boundsSize: {x: 17.1, y: 9.3}
+  boundsSize: {x: 17.387453, y: 8.86}
   obstacleSize: {x: 0, y: 0}
   obstacleCentre: {x: 0, y: 0}
   interactionRadius: 2
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895837b52d5fc53409ded3589d4da696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDensity: 159
+  spawnDensity: 1085.2
   initialVelocity: {x: 0, y: 0}
   jitterStr: 0.03
   spawnRegions:
@@ -205,7 +206,7 @@ MonoBehaviour:
     size: {x: 6.42, y: 4.39}
     debugCol: {r: 1, g: 0.2783019, b: 0.2783019, a: 1}
   showSpawnBoundsGizmos: 1
-  spawnParticleCount: 4536
+  spawnParticleCount: 30740
 --- !u!114 &271053323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,38 +223,29 @@ MonoBehaviour:
   mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
   shader: {fileID: 4800000, guid: 441b7193936682446b30d2140d15792a, type: 3}
   scale: 0.08
-  colourMap:
-    serializedVersion: 2
-    key0: {r: 0.13363299, g: 0.34235913, b: 0.7264151, a: 1}
-    key1: {r: 0.2980392, g: 1, b: 0.56327766, a: 1}
-    key2: {r: 1, g: 0.9309917, b: 0, a: 0}
-    key3: {r: 0.96862745, g: 0.28555763, b: 0.031372573, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 4064
-    ctime1: 33191
-    ctime2: 46738
-    ctime3: 65535
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 2
-    m_ColorSpace: -1
-    m_NumColorKeys: 4
-    m_NumAlphaKeys: 2
-  gradientResolution: 64
   velocityDisplayMax: 6.5
+  gradientTexture: {fileID: 2800000, guid: 246b4779c04617840887fc9a25c527d1, type: 3}
+  needsUpdate: 1
+--- !u!114 &271053324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271053315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc96e3afd2cd3544685a4ebe6544d65c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 2800000, guid: 246b4779c04617840887fc9a25c527d1, type: 3}
+  - {fileID: 2800000, guid: f09244f26b525fb4b8beb21c2074a3ff, type: 3}
+  - {fileID: 2800000, guid: 10de114b556d9874682998f15a338d01, type: 3}
+  - {fileID: 2800000, guid: a2d1cec80795b9546a110ec5d8ba6250, type: 3}
+  - {fileID: 2800000, guid: 20b831d8d8cc98745912616ae5ed4736, type: 3}
+  - {fileID: 2800000, guid: 13780bb502eca034e8113157b857969d, type: 3}
+  randomVel: 50
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +307,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.43
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

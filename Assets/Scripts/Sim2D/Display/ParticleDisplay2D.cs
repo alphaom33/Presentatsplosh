@@ -10,15 +10,13 @@ namespace Seb.Fluid2D.Rendering
 		public Mesh mesh;
 		public Shader shader;
 		public float scale;
-		public Gradient colourMap;
-		public int gradientResolution;
 		public float velocityDisplayMax;
 
 		Material material;
 		ComputeBuffer argsBuffer;
 		Bounds bounds;
-		Texture2D gradientTexture;
-		bool needsUpdate;
+		public Texture2D gradientTexture;
+		public bool needsUpdate;
 
 		void Start()
 		{
@@ -47,7 +45,6 @@ namespace Seb.Fluid2D.Rendering
 			if (needsUpdate)
 			{
 				needsUpdate = false;
-				TextureFromGradient(ref gradientTexture, gradientResolution, colourMap);
 				material.SetTexture("ColourMap", gradientTexture);
 
 				material.SetFloat("scale", scale);
